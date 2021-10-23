@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package parquederoModelos;
 
 import java.sql.Connection;
@@ -24,7 +19,7 @@ public class ModeloInicio {
     
     public Connection conectarBD(){
         
-        Connection conexion=null;
+        Connection conexion = null;
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -32,12 +27,21 @@ public class ModeloInicio {
             System.out.println("Exito conectandonos");
             return conexion;
             
-        }catch(Exception error){
-            
-            System.out.println("No se pudo conectar a la base de datos"+error);
+        }catch(Exception error){            
+            System.out.println("No se pudo conectar a la base de datos. "+error);
             return null;
-            
         }
     }
-    
+
+    public String getServidor() {
+        return servidor;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }
